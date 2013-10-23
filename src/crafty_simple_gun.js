@@ -1,6 +1,7 @@
 Crafty.c("Gun", {
 	init: function() {
 		this.requires("MouseTrigger, Cooldown");
+		this.cooldown(2);
 	},
 	setOwnership: function(ownerId) {
 		this.ownerId = ownerId;
@@ -24,7 +25,7 @@ Crafty.c("Gun", {
 			var headingx = destx - ref[0];
 			var headingy = desty - ref[1];
 			Crafty.e("Bullet").setOwnership(this.ownerId).at(ref[0], ref[1]).heading(headingx, headingy);
-			//this.startCooldown();
+			this.startCooldown();
 		}
 	}
 });
