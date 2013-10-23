@@ -2,16 +2,16 @@ Crafty.c("Cooldown", {
 	init: function() {
 		this.cooldownTime = 0;
 		this.cooldownTimer = 0;
-		this.active = false;
+		this.cooldownActive = false;
 	},
-	time: function(t) {
+	cooldowntime: function(t) {
 		this.cooldownTime = t;
 	},
-	start: function() {
-		this.active = true;
+	startCooldown: function() {
+		this.cooldownActive = true;
 		setInterval(this.tick, 100);
 	},
-	tick: function() {
+	tickCooldown: function() {
 		this.cooldownTimer += 0.1;
 		if(this.cooldownTime <= this.cooldownTimer) {
 			this.active = false;

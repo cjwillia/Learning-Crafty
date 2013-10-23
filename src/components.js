@@ -29,8 +29,8 @@ Crafty.c("Grid", {
 		}
 	},
 	center: function() {
-		var cx = (this._x + this._w) / 2;
-		var cy = (this._y + this._h) / 2;
+		var cx = this._x + (this._w / 2);
+		var cy = this._y + (this._h / 2);
 		return [cx, cy];
 	}
 });
@@ -39,12 +39,18 @@ Crafty.c("Grid", {
 
 Crafty.c("Miner", {
 	init: function() {
-		this.requires("Color, FourwayAccelControl")
+		this.requires("Color, FourwayAccelControl, ActiveControl")
 		.color('rgb(0,100,0)')
 		.attr({
 			w: 32,
 			h: 32
 		});
+		this.activeWeapon = 0;
+	},
+	inventory: [],
+	setWeapon: function(n) {
+		this.activeWeapon = this.inventory[n];
+		this.activeWeapon.use();
 	}
 });
 

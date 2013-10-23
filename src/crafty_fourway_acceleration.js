@@ -14,7 +14,6 @@ Crafty.c("FourwayAccelControl", {
 		return this;
 	},
 	throttle: function() {
-		console.log("throttling");
 		for(action in this.actions) {
 			if(this.isDown(parseInt(action))) {
 				var ax = this.actions[action][0];

@@ -45,14 +45,8 @@ Game = {
 		}
 		this.lastMouse = MouseTracker.mouseDown;
 	},
-	mouseUp: function() {
-		console.log("mouse up!");
-	},
-	mouseDown: function() {
-		console.log("mouse down!");
-	},
 	updatePositions: function() {
-		Crafty("Accel").accelMove();
+		Crafty("Accel").each(function() { this.accelMove(); });
 		var mousex = MouseTracker.position.x;
 		var mousey = MouseTracker.position.y;
 		Crafty.trigger("MousePos", { x: mousex, y: mousey });
@@ -66,13 +60,15 @@ Game = {
 		Crafty.background('rgb(0,0,0)');
 		Crafty.bind("EnterFrame", Game.update);
 		var screen = Crafty.e("Screen").size(0,0, Game.pixelWidth(), Game.pixelHeight());
-		Crafty.bind("ScreenMouseDown", Game.mouseDown);
-		Crafty.bind("ScreenMouseUp", Game.mouseUp);
 		Game.start();
 	},
 	start: function() {
 		var miner = Crafty.e("Miner").at(20, 20);
 		miner.speed(0.15);
+		var gun = Crafty.e("Gun");
+		miner.inventory.push(gun);
+		gun.setOwnership(miner[0]);
+		miner.setWeapon(0);
 		miner.activateControl();
 	}
 }

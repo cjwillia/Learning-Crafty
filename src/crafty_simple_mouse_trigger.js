@@ -1,30 +1,18 @@
-Crafty.c("MouseFire", {
+Crafty.c("MouseTrigger", {
 	init: function() {
 		this.requires("ActiveControl, Grid");
-		this.auto = false;
-	},
-	auto: function(rate) {
-		this.auto = true;
-		this.ROF = rate;
-		this.n = 0;
-	},
-	mobile: function() {
-		this.requires("Accel");
+		this.onMouseControl(this.triggerDown, this.triggerUp);
 	},
 	triggerDown: function() {
-		this.firing = true;
-		this.bind("MousePos", this.trigger);
+		this.trigger("MouseTriggerDown");
 	},
 	triggerUp: function() {
-
+		this.trigger("MouseTriggerUp");
 	},
-	trigger: function() {
-		if(this.n % ROF === 0) {
-			this.n = 1;
-			this.trigger("ShotFired", {x: Crafty.lastEvent})
-		}
+	safetyOff: function() {
+		this.activateControl();
 	},
-	fire: function() {
-
+	safetyOn: function() {
+		this.deactivateControl();
 	}
 });
