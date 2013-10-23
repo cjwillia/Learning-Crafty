@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	</head>
+	<body>
+		<script src="lib/crafty-min.js"></script>
+		<script src="lib/jquery-2.0.3.min.js"></script>
+		<script src="src/mousetracker.js"></script>
+		<script src="src/components.js"></script>
+		
+		<script src="src/util.js"></script>
+		<script src="src/crafty_acceleration.js"></script>
+		<script src="src/crafty_active_control.js"></script>
+		<script src="src/crafty_fourway_acceleration.js"></script>
+		<script src="src/game.js"></script>
+		<script>
+			function load(){
+				MouseTracker.init();
+				Game.init();
+			}
+			window.addEventListener('load', load);
+		</script>
+
+		<div id="canv">
+
+		</div>
+	</body>
+</html>
