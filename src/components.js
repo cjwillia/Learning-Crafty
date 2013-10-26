@@ -54,6 +54,27 @@ Crafty.c("Miner", {
 	}
 });
 
+Crafty.c("FourwayMover", {
+	init: function() {
+		this.requires("Color, Fourway, Grid").fourway(4).color('rgb(0,0,100)')
+		.attr({
+			w: 20,
+			h: 20
+		});
+	}
+});
+
+Crafty.c("RotaryMover", {
+	init: function() {
+		this.requires("Color, Rotary, Grid").color('rgb(200,0,200)')
+		.attr({
+			w:25,
+			h: 25
+		});
+		this.rotary(1, 0.05);
+	}
+});
+
 Crafty.c('Center', {
 	init: function() {
 		this.attr({

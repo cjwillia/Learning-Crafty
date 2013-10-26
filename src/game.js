@@ -26,8 +26,8 @@ Game = {
 	screen_info: {
 		window_width: getViewportWidth(),
 		window_height: getViewportHeight(),
-		width: 10,
-		height: 9,
+		width: 30,
+		height: 18,
 		tile: {
 			width: 32,
 			height: 32
@@ -63,6 +63,7 @@ Game = {
 		Game.start();
 	},
 	start: function() {
+		/*
 		var miner = Crafty.e("Miner").at(20, 20);
 		miner.speed(0.15);
 		var gun = Crafty.e("Gun");
@@ -70,5 +71,7 @@ Game = {
 		gun.setOwnership(miner[0]);
 		miner.setWeapon(0);
 		miner.activateControl();
+		*/
+		var mover = Crafty.e("RotaryMover").at(80, 80);
 	}
 }
