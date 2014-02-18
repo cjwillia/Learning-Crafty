@@ -21,6 +21,9 @@
 		<script src="src/game.js"></script>
 		<script>
 			function load(){
+				// Clean up after yourself properly-- you don't need "load" firing again.
+				window.removeEventListener("load", load, false);
+				
 				MouseTracker.init();
 				Game.init();
 			}
