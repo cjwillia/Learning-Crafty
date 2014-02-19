@@ -14,7 +14,7 @@ Crafty.c("FourwayAccelControl", {
 		return this;
 	},
 	throttle: function() {
-		for(action in this.actions) {
+		for(var action in this.actions) {
 			if(this.isDown(parseInt(action))) {
 				var ax = this.actions[action][0];
 				var ay = this.actions[action][1];
@@ -31,7 +31,7 @@ Crafty.c("FourwayAccelControl", {
 	},
 	throttleUp: function() {
 		var keyStillDown = false;
-		for(action in this.actions) {
+		for(var action in this.actions) {
 			if(this.isDown(parseInt(action))) {
 				keyStillDown = true;
 			}

@@ -27,11 +27,11 @@ Crafty.c("ActiveControl", {
 		this.processKeyDown = function(e) {
 			fnDown(e);
 			callbackDown(e);
-		}
+		};
 		this.processKeyUp = function(e) {
 			fnUp(e);
 			callbackUp(e);
-		}
+		};
 		this.bind("KeyDown", this.processKeyDown);
 		this.bind("KeyUp", this.processKeyUp);
 	},

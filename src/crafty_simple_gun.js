@@ -19,7 +19,7 @@ Crafty.c("Gun", {
 			var destx = MouseTracker.position.x - 8;
 			var desty = MouseTracker.position.y - 8;
 			var ref = Crafty(this.ownerId).center();
-			var o = Crafty(this.ownerId)
+			var o = Crafty(this.ownerId);
 			console.log("Owner XY: " + o.x, o.y);
 			console.log("Owner Center: " + o.center()[0], o.center()[1]);
 			var headingx = destx - ref[0];

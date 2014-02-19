@@ -41,7 +41,8 @@ Game = {
 	},
 	mouseCheck: function() {
 		if(this.lastMouse !== MouseTracker.mouseDown) {
-			MouseTracker.mouseDown ? Crafty.trigger("ScreenMouseDown") : Crafty.trigger("ScreenMouseUp");
+			var action = ((MouseTracker.mouseDown) ? "ScreenMouseDown" : "ScreenMouseUp");
+			Crafty.trigger(action);
 		}
 		this.lastMouse = MouseTracker.mouseDown;
 	},
@@ -74,4 +75,4 @@ Game = {
 		*/
 		var mover = Crafty.e("RotaryMover").at(80, 80);
 	}
-}
+};
