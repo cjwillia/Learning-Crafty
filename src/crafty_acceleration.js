@@ -4,7 +4,7 @@ Crafty.c("Accel", {
 		this.attr({
 			xVel: 0,
 			yVel: 0
-		})
+		});
 	},
 	_velocity: function(x, y) {
 		this.attr({

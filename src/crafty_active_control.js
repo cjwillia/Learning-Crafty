@@ -11,11 +11,11 @@ Crafty.c("ActiveControl", {
 		this.processMouseDown = function() {
 			fnDown();
 			callbackDown();
-		}
+		};
 		this.processMouseUp = function() {
 			fnUp();
 			callbackUp();
-		}
+		};
 		this.bind("ScreenMouseDown", this.processMouseDown);
 		this.bind("ScreenMouseUp", this.processMouseUp);
 	},
