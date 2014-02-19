@@ -12,7 +12,7 @@ Crafty.c("Cooldown", {
 		var t = this;
 		var fn = function() {
 			t.tickCooldown();
-		}
+		};
 		setTimeout(fn, 100);
 	},
 	tickCooldown: function() {
@@ -29,7 +29,7 @@ Crafty.c("Cooldown", {
 			var t = this;
 			var fn = function() {
 				t.tickCooldown();
-			}
+			};
 			setTimeout(fn, 100);
 		}
 	}

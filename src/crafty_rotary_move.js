@@ -50,6 +50,7 @@ Crafty.c("Rotary", {
 		if(this.isDown("UP_ARROW") || this.isDown("DOWN_ARROW")) {
 			var xTraj;
 			var yTraj;
+			var v;
 			var rad = Math.PI / 180;
 			if(this._rotation % 90 !== 0) {
 				xTraj = Math.cos(this._rotation * rad);
@@ -64,7 +65,7 @@ Crafty.c("Rotary", {
 				yTraj = Math.sin(this._rotation * rad);
 			}
 			if(this.accelRate) {
-				var v = new Crafty.math.Vector2D(xTraj, yTraj);
+				v = new Crafty.math.Vector2D(xTraj, yTraj);
 				v.scaleToMagnitude(this.accelRate);
 				if(this.isDown("UP_ARROW"))
 					this.accelerate(v.x, v.y);
@@ -72,7 +73,7 @@ Crafty.c("Rotary", {
 					this.accelerate(-v.x, -v.y);
 			}
 			else {
-				var v = new Crafty.math.Vector2D(xTraj, yTraj);
+				v = new Crafty.math.Vector2D(xTraj, yTraj);
 				v.scaleToMagnitude(this.dist);
 				if(this.isDown("UP_ARROW"))
 					this._velocity(v.x, v.y);
