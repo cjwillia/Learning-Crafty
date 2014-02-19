@@ -1,0 +1,23 @@
+{
+  "name": "Learning-Crafty",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt jshint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buzzedword/Learning-Crafty.git"
+  },
+  "author": "Danny Garcia <danny@noisenewyork.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buzzedword/Learning-Crafty/issues"
+  },
+  "homepage": "https://github.com/buzzedword/Learning-Crafty",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0"
+  }
+}
